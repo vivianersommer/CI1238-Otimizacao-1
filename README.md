@@ -17,6 +17,7 @@ Você deve entregar um arquivo compactado (no formato tar.gz) com seu nome (ou l
 - os fontes (podem estar em subdiretórios);
 - makefile;
 - exemplos usados no texto (podem estar em subdiretórios).
+
 As entregas devem ser feitas por e-mail para andre@inf.ufpr.br, em arquivos compactados com todos os arquivos de cada etapa, com assunto “Otimização-trabalho - etapa 1” ou “Otimização-trabalho - etapa 2".
 O trabalho pode ser feito em dupla para os alunos da graduação. Os alunos da pós-graduação devem fazer individualmente.
 
@@ -42,9 +43,8 @@ Ou seja, para um conjunto P de itens, já sabemos o valor de v.
 Para os demais, ainda não.
 Assim, o objetivo desta etapa é construir uma função (de nome parcial) que recebe uma solução parcial e devolve um valor de k menor ou igual que o número mínimo de viagens necessários assumindo a solução parcial.
 Esta função deve ser construída usando programação linear relaxada.
-Você deve fazer um programa que recebe os dados do problema (número de itens, capacidade do caminhão, pesos dos itens e restriçães de ordem) e o conjunto P com os valores de v, chama a função descrita acima e escreve os valores de v para todos os itens e o valor de k (ver Seção 5 para os formatos
-de entrada e saída).
-O programa construído deve ter o nome parcial-relaxada
+Você deve fazer um programa que recebe os dados do problema (número de itens, capacidade do caminhão, pesos dos itens e restriçães de ordem) e o conjunto P com os valores de v, chama a função descrita acima e escreve os valores de v para todos os itens e o valor de k.
+O programa construído deve ter o nome parcial-relaxada.
 
 
 4. Formatos de entrada e saída
@@ -61,18 +61,24 @@ Saída: E formada por diversas linhas com um número por linha. Na primeira etap
 
 
 4.1. Exemplo de entrada
+
 Se a carga tem 5 itens com pesos 5, 6, 4, 8, 5, a capacidade do caminhão é 10, temos 2 pares dordenados, (2, 3) e (5, 1). 
+
 O arquivo de entrada seria como abaixo.
 
 5 2 10
+
 5 6 4 8 5
+
 2 3
+
 5 1
 
 Para este exemplo precisamos de 4 viagens, item 2 na primeira, itens 3 e 5 na segunda, depois uma viagem para o item 1 e uma para o item 4. Ou seja, v(1) = 3, v(2) = 1, v(3) = 2, v(4) = 4 e v(5) = 2.
 Em uma solução parcial onde v(3) = 2 e v(5) = 3, usando programação linear relaxada, temos um total de 2.8 viagens, onde a viagem 1 tem o item 1 e 0, 8333 do item 2 (5 kg + 4, 99 kg); a viagem 2 tem 0, 167 do item 2, o item 3 e 0, 625 do item 4 (1 kg + 4 kg + 5 kg); a viagem 3 tem 0, 375 do item 4 e o item 5 (3 kg + 5 kg).
 
 4.2. Exemplo de saída
+
 Uma saída possível para a primeira etapa para o exemplo de entrada acima com a solução parcial dada seria como abaixo.
 
 2.8
